@@ -1,5 +1,8 @@
-// Assignment code here
-
+// create arrays to hold charachter sets
+var lowArr = 'abcdefghijklmnopqrstuvwxyz';
+var upperArr = 'ABCDEFGHIJKELMNOPQRSTUVWXYZ';
+var specCharArr = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~\"\'";
+var numArr = '1234567890';
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
