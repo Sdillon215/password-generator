@@ -1,8 +1,8 @@
 // create arrays to hold charachter sets
-var lowArr = 'abcdefghijklmnopqrstuvwxyz';
-var upperArr = 'ABCDEFGHIJKELMNOPQRSTUVWXYZ';
-var specCharArr = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~\"\'";
-var numArr = '1234567890';
+var lowArr = 'abcdefghijklmnopqrstuvwxyz'.split('');
+var upperArr = 'ABCDEFGHIJKELMNOPQRSTUVWXYZ'.split('');
+var specCharArr = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~\"\'".split('');
+var numArr = '1234567890'.split('');
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
