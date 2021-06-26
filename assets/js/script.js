@@ -3,6 +3,7 @@ var lowArr = 'abcdefghijklmnopqrstuvwxyz'.split('');
 var upperArr = 'ABCDEFGHIJKELMNOPQRSTUVWXYZ'.split('');
 var specCharArr = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~\"\'".split('');
 var numArr = '1234567890'.split('');
+var passwordArr = [];
 
 function generatePassword() {
     var length = prompt("How long would you like your password to be? Must be between 8 and 128 characters.");
@@ -13,6 +14,20 @@ function generatePassword() {
     var numbers = confirm("Would you like to include numbers?");
 
     console.log(length, lowerCase, upperCase, specCharacters, numbers);
+
+    if (lowerCase) {
+        passwordArr = passwordArr.concat(lowArr);
+    }
+    if (upperCase) {
+        passwordArr = passwordArr.concat(upperArr);
+    }
+    if (specCharacters) {
+        passwordArr = passwordArr.concat(specCharArr);
+    }
+    if (numbers) {
+        passwordArr = passwordArr.concat(numArr);
+    }
+    console.log(passwordArr);
 }
 
 // Get references to the #generate element
