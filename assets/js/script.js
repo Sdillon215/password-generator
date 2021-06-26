@@ -10,12 +10,15 @@ function generatePassword() {
     // prompt asking how long user would like password
     var length = prompt("How long would you like your password to be? Must be between 8 and 128 characters.");
     // confirm user input is between 8 and 128 and turn string into integer
-    if (length > 8 && length < 128) {
+    if (length > 8 && length < 128 && length !== NaN) {
+        length = parseInt(length);
+        // confirm all other characters
         var lowerCase = confirm("Would you like to include lowercase letters?");
         var upperCase = confirm("Would you like to include uppercase letters?");
         var specCharacters = confirm("Would you like to include special characters?");
         var numbers = confirm("Would you like to include numbers?");
         
+        // on confirm concat to passwordArr
         if (lowerCase) {
             passwordArr = passwordArr.concat(lowArr);
         }
@@ -28,11 +31,14 @@ function generatePassword() {
         if (numbers) {
             passwordArr = passwordArr.concat(numArr);
         }
-        console.log(passwordArr);
-    } else {
-        alert("Please enter a length between 8 and 128");
+        console.log(length);
+    } 
+    // if incorrect length is entered alert user and call generatePassword again
+    else {
+        alert("Please enter a number between 8 and 128.");
         generatePassword();
     }
+
 
 
 }
