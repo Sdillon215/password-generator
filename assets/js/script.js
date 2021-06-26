@@ -4,6 +4,7 @@ var upperArr = 'ABCDEFGHIJKELMNOPQRSTUVWXYZ'.split('');
 var specCharArr = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~\"\'".split('');
 var numArr = '1234567890'.split('');
 var passwordArr = [];
+var completePassword = "";
 
 // function to generate password
 function generatePassword() {
@@ -33,14 +34,20 @@ function generatePassword() {
         }
         console.log(length);
     } 
-    // if incorrect length is entered alert user and call generatePassword again
+    // if incorrect length or NaN is entered alert user and call generatePassword again
     else {
         alert("Please enter a number between 8 and 128.");
         generatePassword();
     }
 
-
-
+    // for loop to iterate through the password array that has been concat with selected characters
+    for (var i = 0; i < length; i++) {
+        var index = Math.floor(Math.random() * (passwordArr.length));
+        // puts characters pulled from passwordArr into completePassword string
+        completePassword += passwordArr[index];
+    }
+    // generatePassword function returns completePassword string
+    return completePassword;
 }
 
 // Get references to the #generate element
