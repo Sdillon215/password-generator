@@ -4,6 +4,17 @@ var upperArr = 'ABCDEFGHIJKELMNOPQRSTUVWXYZ'.split('');
 var specCharArr = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~\"\'".split('');
 var numArr = '1234567890'.split('');
 
+function generatePassword() {
+    var length = prompt("How long would you like your password to be? Must be between 8 and 128 characters.");
+
+    var lowerCase = confirm("Would you like to include lowercase letters?");
+    var upperCase = confirm("Would you like to include uppercase letters?");
+    var specCharacters = confirm("Would you like to include special characters?");
+    var numbers = confirm("Would you like to include numbers?");
+
+    console.log(length, lowerCase, upperCase, specCharacters, numbers);
+}
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -16,5 +27,5 @@ function writePassword() {
 
 }
 
-// Add event listener to generate button
+// Add event listener to generate button - on click calls writePassword function
 generateBtn.addEventListener("click", writePassword);
