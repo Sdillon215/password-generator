@@ -11,7 +11,7 @@ function generatePassword() {
     // prompt asking how long user would like password
     var length = prompt("How long would you like your password to be? Must be between 8 and 128 characters.");
     // confirm user input is between 8 and 128 and turn string into integer
-    if (length > 8 && length < 128 && length !== NaN) {
+    if (length => 8 && length <= 128 && length !== NaN) {
         length = parseInt(length);
         // confirm all other characters
         var lowerCase = confirm("Would you like to include lowercase letters?");
@@ -31,6 +31,10 @@ function generatePassword() {
         }
         if (numbers) {
             passwordArr = passwordArr.concat(numArr);
+        }
+        if (!lowerCase && !upperCase && !specCharacters && !numbers) {
+            alert("You must select at least one character set!");
+            generatePassword();
         }
     }
     // if incorrect length or NaN is entered alert user and call generatePassword again
