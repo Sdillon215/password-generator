@@ -8,6 +8,7 @@ var completePassword = "";
 
 // function to generate password
 function generatePassword() {
+    completePassword = "";
     // prompt asking how long user would like password
     var length = prompt("How long would you like your password to be? Must be between 8 and 128 characters.");
     // confirm user input is between 8 and 128 and turn string into integer
